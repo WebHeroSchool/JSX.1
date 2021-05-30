@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { count, length } from  './number.js';
 
 const number = 22;
 const far = true;
@@ -11,6 +12,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <p>
+         {count} * {length} = {count*length}
         </p>
         <p style={{
           color:'red'
