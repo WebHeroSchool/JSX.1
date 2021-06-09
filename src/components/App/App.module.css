@@ -1,7 +1,13 @@
 .wrap{
  margin: auto;
- width: 300px;
+ width: 20%;
+ background-color: white;
+ padding: 4%;
+ text-align: center;
 }
 .title{
 	font-family: Helvetica;
+}
+body{
+	background-color: #f5f2f2;
 }

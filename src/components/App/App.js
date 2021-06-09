@@ -27,7 +27,7 @@ return(
   	<h1 className={styles.title}>Важные дела:</h1>
   	<InputItem />
   <ItemList items={items} />
-  <Footer count={6} />
+  <Footer count={1} />
   </div>);
 }
 
