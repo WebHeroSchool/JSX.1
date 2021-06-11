@@ -11,7 +11,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 
-const ItemList = ({ items }) =>(<div>
+const ItemList = ({ items,onClickDone }) =>(<div>
   <List>
     {items.map(item => (
       <ListItem key={item.value} className={styles.item} dense button>
@@ -20,12 +20,13 @@ const ItemList = ({ items }) =>(<div>
         defaultChecked
         color="primary"
         value="checkedG"
+        onClick={() => onClickDone(item.isDone)}
         inputProps={{
           'aria-label': 'secondary checkbox',
         }}
       />
         </ListItemIcon>
-        <ListItemText><Item value={item.value} isDone={item.isDone} /></ListItemText>
+        <ListItemText><Item value={item.value} isDone={item.isDone} onClickDone={onClickDone} /></ListItemText>
         <ListItemSecondaryAction className={styles.delete}>
           <IconButton aria-label="очистить">
             <DeleteIcon />
