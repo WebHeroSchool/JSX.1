@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import styles from './Item.module.css';
 
 
-const Item = ({ value, isDone, onClickDone }) => (<span className={
+const Item = ({ value, isDone, onClickDone, id }) => (<span className={
 	classnames({
 		[styles.item]: true,
 		[styles.done]: isDone
