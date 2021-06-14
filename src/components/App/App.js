@@ -37,15 +37,18 @@ import styles from './App.module.css';
      			return newItem;
      		});
      	this.setState({items: newItemList})
-     }
+     };
+
 onClickDelete = id => {
     const newItemList = this.state.items.filter(
-     item => item.id != id);
+item =>{
+	return item.id !==id;
+    });
     this.setState({ items: newItemList });
   }
 
       render() {
-      	 const casesCount = this.state.items.filter(item => item.isDone === false);
+      	
 return(
   	<div className={styles.wrap}>
   	<h1 className={styles.title}>Важные дела:</h1>
