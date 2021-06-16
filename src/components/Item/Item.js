@@ -10,19 +10,17 @@ import ListItem from '@material-ui/core/ListItem';
 
 const Item = ({ value, isDone, onClickDone, id, onClickDelete}) => (<ListItem className={
 	classnames({
-		[styles.item]: true,
+		[styles.item]: false,
 		[styles.done]: isDone
 	})
 }>
-         <Checkbox
-        defaultChecked
-        color="primary"
-        value="checkedG"
-        onClick={() => onClickDone(id)}
-        inputProps={{
-          'aria-label': 'secondary checkbox',
-        }}
-      />
+<Checkbox
+color="primary"
+onClick={() => onClickDone(id)}
+ inputProps={{ 'aria-label': 'uncontrolled-checkbox'
+  }} 
+/>
+      
 	  <ListItemText > {value}</ListItemText>
 	<ListItemSecondaryAction className={styles.delete}>
           <IconButton aria-label="очистить" onClick={() => onClickDelete(id)}>
