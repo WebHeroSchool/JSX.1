@@ -35,7 +35,6 @@ onClick={() => onClickDone(id)}
     value: PropTypes.string.isRequired,
     isDone: PropTypes.bool.isRequired,
     onClickDone: PropTypes.func.isRequired,
-    onCliсkDelete: PropTypes.func.isRequired,
     id: PropTypes.number.isRequired
   };
 

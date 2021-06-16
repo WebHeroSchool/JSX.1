@@ -24,8 +24,6 @@ const ItemList = ({ items,onClickDone, id, onClickDelete }) =>(
     ItemList.propTypes = {
       items: PropTypes.array.isRequired,
       onClickDone: PropTypes.func.isRequired,
-      onCliсkDelete: PropTypes.func.isRequired,
-      id: PropTypes.number.isRequired
   };
 
 
