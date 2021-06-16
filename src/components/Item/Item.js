@@ -30,4 +30,9 @@ onClick={() => onClickDone(id)}
 	</ListItem>
 	);
 
+	Item.defaultProps = {
+    isDone: false
+};
+
+
 export default Item;

@@ -17,4 +17,10 @@ const Footer = ({ count }) => (<footer><div className={styles.count}>Остал�
     </Button></div>
       </footer>
 )
+
+Footer.defaultProps = {
+    count: 0
+};
+
+
 export default Footer;
