@@ -21,5 +21,12 @@ const ItemList = ({ items,onClickDone, id, onClickDelete }) =>(
   </List>
 );
 
+    ItemList.propTypes = {
+      items: PropTypes.array.isRequired,
+      onClickDone: PropTypes.func.isRequired,
+      onCliсkDelete: PropTypes.func.isRequired,
+      id: PropTypes.number.isRequired
+  };
+
 
 export default ItemList;

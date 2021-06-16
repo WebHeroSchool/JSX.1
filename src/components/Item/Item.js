@@ -7,6 +7,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
+import PropTypes from 'prop-types';
 
 const Item = ({ value, isDone, onClickDone, id, onClickDelete}) => (<ListItem className={
 	classnames({
@@ -30,9 +31,13 @@ onClick={() => onClickDone(id)}
 	</ListItem>
 	);
 
-	Item.defaultProps = {
-    isDone: false
-};
+	 Item.propTypes = {
+    value: PropTypes.string.isRequired,
+    isDone: PropTypes.bool.isRequired,
+    onClickDone: PropTypes.func.isRequired,
+    onCliсkDelete: PropTypes.func.isRequired,
+    id: PropTypes.number.isRequired
+  };
 
 
 export default Item;
