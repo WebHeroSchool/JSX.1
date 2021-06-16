@@ -2,7 +2,7 @@ import React from 'react';
 import Item from '../Item/Item'
 import styles from './ItemList.module.css';
 import List from '@material-ui/core/List';
-
+import PropTypes from 'prop-types';
 
 
 const ItemList = ({ items,onClickDone, id, onClickDelete }) =>(

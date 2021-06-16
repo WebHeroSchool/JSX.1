@@ -16,7 +16,7 @@ const Footer = ({ count }) => (<footer><div className={styles.count}>Остал�
       Удалить выполненные дела
     </Button></div>
       </footer>
-)
+);
 
 Footer.defaultProps = {
     count: PropTypes.number.isRequired
