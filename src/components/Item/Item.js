@@ -9,7 +9,20 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 import PropTypes from 'prop-types';
 
-const Item = ({ value, isDone, onClickDone, id, onClickDelete}) => (<ListItem className={
+
+class Item extends React.Component {
+	componentDidMount() {
+		console.log('componentDidMount')
+	}
+	componentDidUpdate() {
+		console.log('componentDidUpdate')
+	}
+	componentWillUnmount() {
+		console.log('componentWillUnmount')
+	}
+	render () {
+		const { value, isDone, onClickDone, id, onClickDelete} = this.props;
+		return(<ListItem className={
 	classnames({
 		[styles.item]: false,
 		[styles.done]: isDone
@@ -30,6 +43,9 @@ onClick={() => onClickDone(id)}
         </ListItemSecondaryAction>
 	</ListItem>
 	);
+	}
+}
+
 
 	 Item.propTypes = {
     value: PropTypes.string.isRequired,
