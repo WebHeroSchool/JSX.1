@@ -10,21 +10,21 @@ import styles from './App.module.css';
   		items: [
        {
        value:'Написать новое приложение',
-       isDone: true,
+       isDone: false,
        id: 1
        },
        {
        	value:'Прописать props-ы',
-       	isDone: true,
+       	isDone: false,
        	id: 2
        },
        {
        	value:'Сделать все дела',
-       	isDone: true,
+       	isDone: false,
        	id: 3
        }
   	],
-  	count: 6
+  	count: 3
   };
 
      onClickDone = id => {
@@ -46,13 +46,37 @@ item =>{
     });
     this.setState({ items: newItemList });
   }
+  onClickAdd = value => {
+  	if (value !== '') {
+
+  this.setState(state => ({
+  	items: [
+      ...state.items,
+      {
+      	value,
+      	isDone:false,
+      	id:state.count + 1
+      }
+  	],
+  	count: state.count + 1,
+  	hasError: false
+  }));
+
+     } else {
+     	this.setState(state => ({
+     	hasError: true
+              }))
+           }
+      };     
 
       render() {
       	
 return(
   	<div className={styles.wrap}>
   	<h1 className={styles.title}>Важные дела:</h1>
-  	<InputItem />
+  	<InputItem onClickAdd={this.onClickAdd} 
+    hasError={this.state.hasError}
+  	 />
   <ItemList items={this.state.items}
    onClickDone={this.onClickDone}
     onClickDelete={this.onClickDelete}
