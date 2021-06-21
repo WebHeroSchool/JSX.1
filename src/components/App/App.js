@@ -81,7 +81,7 @@ return(
    onClickDone={this.onClickDone}
     onClickDelete={this.onClickDelete}
     />
-  <Footer count={this.state.count} />
+  <Footer count={this.state.items.length} />
   </div>);
 }
       }
