@@ -10,11 +10,14 @@ import ListItem from '@material-ui/core/ListItem';
 import PropTypes from 'prop-types';
 
 
-class Item extends React.Component {
+
+	class Item extends React.Component {
 	componentDidMount() {
 		this.timerID = setInterval(() => console.log ('interval'),1000);
 	}
-
+    componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
 	componentWillUnmount() {
 		clearInterval(this.timerID);
 	}
