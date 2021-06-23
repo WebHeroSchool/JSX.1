@@ -32,7 +32,7 @@ class InputItem extends React.Component {
 			formHelperText = ''
 		}	
 
-		return (<Grid>
+return (<Grid>
 		<FormControl error>
     <TextField
           label="Добавить задание"
