@@ -22,9 +22,16 @@ class About extends React.Component{
    	this.setState({
    		repoList: data,
    		isLoading: false
-   	})
-   });
-  
+   	});
+   })
+   
+  .catch(err =>{
+      this.setState({
+         isLoading: false,
+         isError: true,
+         errorMessage: err
+      });
+   })
    octokit.users.getByUsername({
       username: 'NataliiaChuienko'
    }).then(({data}) => {
