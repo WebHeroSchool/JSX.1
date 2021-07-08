@@ -1,0 +1,42 @@
+
+.title{
+ margin: 10% 0 10% 25%;
+}
+.github__logo{
+	width: 35px;
+	height: 35px;
+	margin: 2% 0 5% 10%;
+}
+.github__logo:hover{
+	width: 45px;
+	height: 45px;
+}
+.tg__logo{
+  width: 35px;
+	height: 35px;
+	margin: 0 0 0 10%;	
+}
+.tg__logo:hover {
+	width: 45px;
+	height: 45px;
+}
+.gmail__logo{
+	width: 50px;
+	height: 50px;
+	margin: 4% 0 0 10%;
+	padding: 5px 0 0 0;
+}
+.gmail{
+text-decoration: none;
+ color:  #000;
+ }
+ .gmail:hover {
+ 	color: #000;
+ }
+ .wrap_mail{
+ 	display: flex;
+ 	justify-content: space-between;
+ }
+ .gmail_text{
+ 	margin: 8% 3% 0 0;
+ }

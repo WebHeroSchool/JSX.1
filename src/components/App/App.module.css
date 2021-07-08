@@ -4,8 +4,18 @@ body{
 	font-family: Helvetica;
 }
 .link{
+	display: flex;
 	text-decoration: none;
+	color: #fff;
+	background-color: #1804bf;
+	margin: 10px 10px 0 0;
+	border-radius: 18px;
 }
+.link:hover{
+	background-color: #6859eb;
+	transition: .5s;
+}
+
 .sidebar{
 	grid-area: sidebar;
 }
@@ -17,4 +27,13 @@ body{
 	grid-template-areas: 'sidebar ... content content';
 	margin: auto;
 	width: 500px;
+}
+.img{
+	display: flex;
+	justify-content: flex-end;
+	margin: 0 10px 10px 0;
+}
+.copyright{
+	border: 2px solid #87CEEB;
+	width: 100px;
 }

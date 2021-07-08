@@ -1,4 +1,116 @@
+.wrap{
+	display: flex;
+	justify-content: space-between;
+}
+.preload{
+	margin-left: 50%;
+	margin-top: 10%;
+}
+.title{
+	font-size: 28px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+.name {
+	font-size: 25px;
+	text-align: center;
+	color:#00008B;
+	margin: 0 20px 0 20px;
+}
+.text{
+   font-size: 15px;
+	text-align: center;
+	margin-bottom: 30px;	
+}
+.github{
+	display: flex;
+	padding: 5px 28%;
+	font-size: 22px;
+	background-color: #78768a;
+	color: #fff;
+	border-radius: 10px;
+	text-align: center;
+    text-decoration: none;
+}
+.github:hover {
+	background-color: #9c9aad;
+	color:  #000; 
+	transition: .5s;
+}
+
 .avatar{
-	width: 200px;
-	height: 200px;
+	max-width: 100%;
+	border-radius: 50%;
+
+}
+
+.title_repo{
+  font-size: 22px;
+	margin-bottom: 0px;
+}
+.project_list{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.item{
+	margin-bottom: 10px;
+	text-align: center;
+	overflow: hidden;
+	border: 2px solid #87CEEB;
+	border-radius: 10px;
+	position: relative;
+}
+.repo_name{
+	text-decoration: none;
+	font-size: 18px;
+	display: block;
+	background-color:  #87CEEB;
+	padding: 5px;
+	color: #000;
+	border-radius: 6px 6px 10px 10px;
+}
+.repo_name:hover{
+	background-color: #B0E0E6;
+}
+.repos_info{
+	display: flex;
+	
+}
+.repos_language{
+	margin: 4% 3% 1% 6%;
+}
+.circle{
+	display: block;
+	position: absolute;
+	top: 61%;
+	left: 5px;
+	width: 15px;
+	height: 15px;
+	background-color: #e51937;
+	border-radius: 50%;
+}
+
+.star{
+	width: 15px;
+	height: 15px;
+	margin: 4%;
+}
+
+.repos_star{
+	margin: 4%;
+}
+
+.repos_update{
+	margin: 1% 1% 1% 4%;
+}
+.buttons{
+	display: flex;
+	justify-content: center;
+}
+
+.button:hover{
+	background-color: #87CEEB;
+	border-radius: 30%;
 }

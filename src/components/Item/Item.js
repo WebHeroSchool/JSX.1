@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 
 
 	class Item extends React.Component {
-	componentDidMount() {
+	/*componentDidMount() {
 		this.timerID = setInterval(() => console.log ('interval'),1000);
 	}
     componentDidUpdate() {
@@ -20,41 +20,53 @@ import PropTypes from 'prop-types';
   }
 	componentWillUnmount() {
 		clearInterval(this.timerID);
-	}
+	}*/
 	
 	render () {
 		const { value, isDone, onClickDone, id, onClickDelete} = this.props;
-		return(<ListItem className={
-	classnames({
-		[styles.item]: false,
-		[styles.done]: isDone
+		return(
+			
+	<ListItem className={
+	 classnames({
+		[styles.item]: true,
+		[styles.done]: isDone,
 	})
-}>
+}> 
+
+
 <Checkbox
+checked={isDone}
 color="primary"
-onClick={() => onClickDone(id)}
  inputProps={{ 'aria-label': 'uncontrolled-checkbox'
-  }} 
+  }}
+   onClick={() => onClickDone(id)} 
 />
       
 	  <ListItemText > {value}</ListItemText>
 	<ListItemSecondaryAction className={styles.delete}>
-          <IconButton aria-label="очистить" onClick={() => onClickDelete(id)}>
+          <IconButton
+           aria-label="очистить"
+            className = { styles.basket }
+            onClick={() => onClickDelete(id)}>
             <DeleteIcon />
           </IconButton>
         </ListItemSecondaryAction>
-	</ListItem>
-	);
+	</ListItem>);
 	}
 }
 
 
-	 Item.propTypes = {
-    value: PropTypes.string.isRequired,
+	 Item.defaultProps = {
+    isDone: false,
+};
+Item.propTypes = {
+    value: PropTypes.oneOfType ([
+        PropTypes.string,
+        PropTypes.number
+    ]),
     isDone: PropTypes.bool.isRequired,
-    onClickDone: PropTypes.func.isRequired,
     id: PropTypes.number.isRequired
-  };
+};
 
 
 export default Item;

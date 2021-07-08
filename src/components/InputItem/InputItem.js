@@ -5,47 +5,55 @@ import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import PropTypes from 'prop-types';
+import Alert from '@material-ui/lab/Alert';
 
 class InputItem extends React.Component {
 	state= {
-		inputValue: ''	
+		inputValue: '',
+		error: false       
 	};
 
 	onButtonClick = () =>{
 		this.setState({
-	inputValue: ''
+	     inputValue: ''
 		});
 		this.props.onClickAdd (this.state.inputValue);
 	};
 	render() {
-		
-		const condition = this.props.hasError;
-		let formHelperText;
+	const errorEmpty = this.props.isError;
+    const errorSame = this.props.isErrorSame;
+    const success = this.props.isSuccess;
 
-		if(condition) {
-			formHelperText = <FormHelperText
-				id="component-error-text">
-				Пустое поле!
-				</FormHelperText>
-		
-		} else {
-			formHelperText = ''
-		}	
+    let alert;
+		if ( errorEmpty ) {
+        alert = <Alert 
+        severity="error">This field cannot be empty!
+        </Alert>
+		  } else if ( errorSame ) {
+        alert = <Alert 
+        severity="error">This task has already been added!
+        </Alert>
+      } else if ( success ) {
+        alert = <Alert 
+        severity="success">Your task successfully added!
+        </Alert>
+      } else {
+        alert = ''
+      }
 
 return (<Grid>
-		<FormControl error>
+		
+		<div>
+      { alert }
+    </div>
     <TextField
-          label="Добавить задание"
+          label="Add task"
           id="margin-dense"
           margin="dense"
           value={this.state.inputValue}
-          onChange={event => this.setState({inputValue: event.target.value.toUpperCase()})}
+          onChange={event => this.setState({inputValue: event.target.value})}
         />
 
-<div>
-				{formHelperText}
-			</div>
-			</FormControl>
 
      <Button 
      variant="contained" 
@@ -53,14 +61,16 @@ return (<Grid>
      fullWidth
      onClick={this.onButtonClick}
      >
-        Добавить
+       Create
       </Button>
 </Grid>);
 	}
-}
+};
 
 InputItem.propTypes = {
-  onClickAdd: PropTypes.func.isRequired,
+  InputValue: PropTypes.oneOfType ([
+    PropTypes.string
+  ])
 }
 
 export default InputItem; 
