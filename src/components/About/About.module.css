@@ -48,6 +48,21 @@
   font-size: 22px;
 	margin-bottom: 0px;
 }
+.project_list1{
+	margin: 5px;
+	padding-left: 20px;
+}
+
+.project_link1{
+	text-decoration: none;
+	font-size: 18px;
+	color: #000;
+}
+
+.project_link1:hover {
+	color: #696969;
+}
+
 .project_list{
 	list-style: none;
 	padding: 0;

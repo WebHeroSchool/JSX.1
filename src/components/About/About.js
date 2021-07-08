@@ -6,7 +6,7 @@ import styles from './About.module.css';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import star from './img/star.png';
-import Contacts from '../Contacts/Contacts';
+
 
 const octokit = new Octokit();
 
@@ -15,8 +15,7 @@ class About extends React.Component{
 		isLoading: true,
 		repoList: [],
       infoAboutUser: [],
-      repoStatus: null,
-      firstPage: 0,
+           firstPage: 0,
       nextPage: 2,
      userStatus: undefined,
       repoStatus: undefined,
@@ -91,6 +90,14 @@ onClickNextPage = () => {
         </div>}
         {!isLoading && userStatus !== 200 && <p>Информация о пользователе не получена</p>}
                <p><a className={styles.github} href="https://github.com/NataliiaChuienko">Page on GitHub</a></p>
+                 <h2 className={styles.title}>{ isLoading ? <CircularProgress className={styles.preload} /> : 'My projects:' }</h2>
+                 {!isLoading && repoStatus === 200 && <div>
+							<ul className={styles.project_list1}>
+								<li className={styles.project_item1}><a className={styles.project_link1} href="https://webheroschool.github.io/Teslacar/">Tesla</a></li>
+								<li><a className={styles.project_link1} href="https://webheroschool.github.io/gameDev/">Game</a></li>
+							</ul>
+						</div>}  
+
                    <h2 className={styles.title_repo}>{ isLoading ? <CircularProgress className={styles.preload} /> : 'My Repositories:' }</h2> 
              {!isLoading && repoStatus === 200 &&    <ul className={styles.project_list}>
                     {repoList.slice(firstPage, nextPage).map(repo => (

@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import styles from './Contacts.module.css';
-import LinearProgress from '@material-ui/core/LinearProgress';
 import { Octokit } from '@octokit/rest';
 import errorLogo from './img/error.svg';
 import githubLogo from './img/github.svg';
@@ -39,7 +38,7 @@ octokit.users.getByUsername({
 }
 
 render () {
-    const { isLoading, error, userInfo } = this.state;
+    const { error } = this.state;
 
 if (error) {
         return <div className = { styles.error__container }>

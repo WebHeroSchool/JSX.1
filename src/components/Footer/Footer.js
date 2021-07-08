@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Footer.module.css';
-import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import PropTypes from 'prop-types';
